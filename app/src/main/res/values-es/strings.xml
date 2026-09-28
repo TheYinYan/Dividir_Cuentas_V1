@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dividir Cuentas V1</string>
+    <string name="tipLabel">Valoración</string>
+    <string name="RoundUpTip">Redondear Propina</string>
+    <string name="Calculate">Calcular</string>
+</resources>

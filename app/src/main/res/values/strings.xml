@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Dividir Cuentas V1</string>
+    <string name="tipLabel">assessment</string>
+    <string name="RoundUpTip">Round Up Tip</string>
+    <string name="Calculate">Calculate</string>
+</resources>
