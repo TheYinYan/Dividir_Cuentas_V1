@@ -144,7 +144,7 @@ fun TipCalculatorScreen() {
             }
             if (showCalculate){
                 Text(stringResource(R.string.Total_Print) + " ${totalAmount.text.toString().toFloat()}")
-                Text(stringResource(R.string.unidad_Print)+" ${totalDiv.toDouble()}")
+                Text(stringResource(R.string.unidad_Print)+" ${totalDiv.toFloat()}")
             }
         }
     }
