@@ -4,4 +4,7 @@
     <string name="tipLabel">Valoración</string>
     <string name="RoundUpTip">Redondear Propina</string>
     <string name="Calculate">Calcular</string>
+    <string name="Total_Print">Cantidad Total:</string>
+    <string name="unidad_Print">Cada uno:</string>
+
 </resources>

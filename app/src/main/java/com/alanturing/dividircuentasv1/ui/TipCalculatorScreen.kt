@@ -44,7 +44,7 @@ fun TipCalculatorScreenPreview(){
 
 @Composable
 fun TipCalculatorScreen() {
-    var totalAmount = remember { TextFieldState("0.0") }
+    val totalAmount = remember { TextFieldState("0.0") }
     val guestNumber = remember { TextFieldState("0") }
     var checked by remember { mutableStateOf(false) }
     var tip by remember { mutableStateOf(0f) }
@@ -111,7 +111,16 @@ fun TipCalculatorScreen() {
                 valueRange = 0f..4f
             )
             var totalCalcular by remember { mutableStateOf(0F) }
-            val isButtonEnable = guestNumber.text.toString().toInt() > 0 && totalAmount.text.toString().toFloat() > 0
+            val guestNumberState = guestNumber.text.toString().toIntOrNull()
+            val totalAmountState = totalAmount.text.toString().toFloatOrNull()
+
+            var isButtonEnable by remember { mutableStateOf(false) }
+
+                if (guestNumberState !== null && totalAmountState !== null){
+                if (guestNumberState > 0 && totalAmountState > 0){
+                    isButtonEnable = true
+                }else isButtonEnable = false
+            }
             var totalDiv by remember { mutableStateOf(0F) }
             Button(
                 enabled = isButtonEnable ,
@@ -129,13 +138,13 @@ fun TipCalculatorScreen() {
                     totalDiv = totalCalcular / guestNumber.text.toString().toFloat()
                 }
             ) {
-                Icon(painterResource(R.drawable.Icon_Calculo),
-                    contentDescription = "Calcular")
-                Text(stringResource(R.string.Calculate))
+                Icon(painterResource(R.drawable.calculate_24px),
+                    contentDescription = stringResource(R.string.tipLabel))
+                Text(" "+stringResource(R.string.Calculate))
             }
             if (showCalculate){
-                Text("Cantidad Total: ${totalAmount.text.toString().toInt()}")
-                Text("Cada uno: ${totalDiv.toInt()}")
+                Text(stringResource(R.string.Total_Print) + " ${totalAmount.text.toString().toFloat()}")
+                Text(stringResource(R.string.unidad_Print)+" ${totalDiv.toDouble()}")
             }
         }
     }

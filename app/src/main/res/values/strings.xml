@@ -3,4 +3,7 @@
     <string name="tipLabel">assessment</string>
     <string name="RoundUpTip">Round Up Tip</string>
     <string name="Calculate">Calculate</string>
+    <string name="Total_Print">Total amount:</string>
+    <string name="unidad_Print">Each:</string>
+
 </resources>
